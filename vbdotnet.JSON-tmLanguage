@@ -1,0 +1,7 @@
+{ "name": "VB.NET",
+  "scopeName": "source.vbnet", 
+  "fileTypes": ["vb"], 
+  "patterns": [
+  ],
+  "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
+}
