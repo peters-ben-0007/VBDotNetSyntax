@@ -11,7 +11,8 @@
 	{ "include": "#languageVariable" },
 	{ "include": "#operator" },
 	{ "include": "#languageContants" },
-	{ "include": "#numericContant" }
+	{ "include": "#numericContant" },
+	{ "include": "#quotedString" }
   ],
   "repository": {
   	"simpleVariable":{
@@ -117,7 +118,22 @@
 	"numericContant": {
 		"match": "([^a-zA-Z_]\\d+)",
 		"name": "constant.numeric.vbnet"
-	}
+	},
+	"quotedString": {
+		"begin": "(\")",
+	 	"beginCaptures":{
+	 		"1": { "name": "punctuation.definition.string.vbnet"}
+	 	},
+	 	"patterns": [
+		 	{  "name": "string.quoted.double.vbnet",
+		 	   "match": "([^\"]|\"\")*"
+		 	}
+	 	],
+	  	"end": "(\")",
+	  	"endCaptures": {
+	  		"1": { "name": "punctuation.definition.string.vbnet"}
+	  	}
+    }
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
 }
