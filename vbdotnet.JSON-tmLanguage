@@ -13,6 +13,7 @@
 	{ "include": "#languageVariable" },
 	{ "include": "#namespaceDefinition" },
 	{ "include": "#moduleDefinition" },
+	{ "include": "#interfaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
 	{ "include": "#definitionEnd" },
@@ -86,6 +87,16 @@
 		    "3": { "name": "entity.name.type.module.vbnet" }
 		}
 	},
+	"interfaceDefinition":{
+		"name": "meta.interface.vbnet",
+		"match": "^\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:shadows))?\\s*((?i:interface))\\s*([a-zA-Z_]\\w*)\\s*",
+		"captures": {
+		    "1": { "name": "storage.modifier.class.vbnet" },
+			"2": { "name": "storage.modifier.class.vbnet" },
+			"3": { "name": "storage.type.interface.vbnet" },
+			"4": { "name": "entity.name.type.interface.vbnet" }
+		}
+	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
 		"match": "^\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:shadows))?\\s*((?i:mustinherit|notinheritable))?\\s*((?i:partial))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
@@ -121,10 +132,10 @@
 		}
 	},
 	"definitionEnd":{
-	   "match": "^\\s*((?i:end)){1}\\s*((?i:function|sub|class|namespace|module))",
+	   "match": "^\\s*((?i:end)){1}\\s*((?i:function|sub|class|namespace|module|interface))",
 	   "captures": {
 			"1": {"name": "keyword.control.vbnet"},
-			"2": {"name": "storage.type.function.vbnet"}
+			"2": {"name": "storage.type.vbnet"}
 	   }
 	},
   	"storageModifiers":{
