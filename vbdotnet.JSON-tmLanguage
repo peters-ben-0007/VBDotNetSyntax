@@ -3,14 +3,14 @@
   "fileTypes": ["vb"], 
   "patterns": [
   	{ "include": "#singleLineComment" },
-  	{ "include": "#supportTypes" },
-  	{ "include": "#suportFunctions" },
-	{ "include": "#languageVariable" },
+	{ "include": "#quotedString" },
 	{ "include": "#numericConstant" },
 	{ "include": "#characterOperator" },
 	{ "include": "#wordOperator" },
 	{ "include": "#languageContants" },
-	{ "include": "#quotedString" },
+  	{ "include": "#supportTypes" },
+  	{ "include": "#suportFunctions" },
+	{ "include": "#languageVariable" },
 	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
@@ -20,14 +20,70 @@
 	{ "include": "#otherKeywords" }
   ],
   "repository": {
-  	"storageModifiers":{
-  		"name": "storage.modifier.vbnet",
-		"match": "((?i:dim|public|private|protected|friend))"
-   	},
   	"singleLineComment": {
 		"name": "comment.line.singlequote.vbnet",
 		"match": "'.*$",
 		"comment": "single quote comment"
+	},
+  	"quotedString": {
+		"begin": "(\")",
+	 	"beginCaptures":{
+	 		"1": { "name": "punctuation.definition.string.vbnet"}
+	 	},
+	 	"patterns": [
+		 	{  "name": "string.quoted.double.vbnet",
+		 	   "match": "([^\"]|\"\")*"
+		 	}
+	 	],
+	  	"end": "(\")",
+	  	"endCaptures": {
+	  		"1": { "name": "punctuation.definition.string.vbnet"}
+	  	}
+    },
+    "numericConstant": {
+		"match": "(-?\\d+(\\.?\\d?))",
+		"name": "constant.numeric.vbnet"
+	},
+	"characterOperator":{
+		"match": "((?i:\\.|\\+=|\\+|\\*=|\\*|\\\\=|\\\\|/=|/|=|-=|-|<|<=|>|>=|&=|&|\\^|\\^=|>>=|>>|<<=|<<))",
+		"name": "keyword.operator.vbnet"
+	},
+	"wordOperator":{
+		"match": "(?i:\\b(mod|not|and|andalso|or|orelse|in|is|isnot|xor)\\b)",
+		"name": "keyword.operator.vbnet"
+	},
+	"languageContants":{
+		"match": "((?i:true|false|nothing))",
+		"name": "constant.language.vbnet"
+	},
+	"supportTypes":{
+		"name": "support.type.vbnet",
+		"match": "(?i:\\b(integer|decimal|double|single|date|long|short|char|string|byte|date|boolean|delegate|event|enum|sbyte|uinteger|ulong|ushort)\\b)"
+	},
+	"suportFunctions":{
+		"name": "support.function.vbnet",
+		"match": "(?i:\\b(new|addressof|addhandler|removehandler|throw)\\b)"
+	},
+		"languageVariable":{
+		"match": "((?i:Me|MyBase|MyClass))\\.",
+		"name": "keyword.other.vbnet"
+	},
+	"namespaceDefinition":{
+		"name": "meta.namespace.vbnet",
+		"match": "^((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
+		"captures": {
+			"1": { "name": "storage.modifier.namespace.vbnet" },
+			"2": { "name": "entity.name.type.vbnet" }
+		}
+	},
+	"classDefinition":{
+		"name": "meta.class.vbnet",
+		"match": "^((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
+		"captures": {
+			"1": { "name": "storage.modifier.class.vbnet" },
+			"2": { "name": "storage.type.class.vbnet" },
+			"3": { "name": "entity.name.type.vbnet" }
+		}
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
@@ -58,31 +114,10 @@
 			"2": {"name": "storage.type.function.vbnet"}
 	   }
 	},
-	"classDefinition":{
-		"name": "meta.class.vbnet",
-		"match": "^((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
-		"captures": {
-			"1": { "name": "storage.modifier.class.vbnet" },
-			"2": { "name": "storage.type.class.vbnet" },
-			"3": { "name": "entity.name.type.vbnet" }
-		}
-	},
-	"namespaceDefinition":{
-		"name": "meta.namespace.vbnet",
-		"match": "^((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
-		"captures": {
-			"1": { "name": "storage.modifier.namespace.vbnet" },
-			"2": { "name": "entity.name.type.vbnet" }
-		}
-	},
-	"supportTypes":{
-		"name": "support.type.vbnet",
-		"match": "(?i:\\b(integer|decimal|double|single|date|long|short|char|string|byte|date|boolean|delegate|event|enum|sbyte|uinteger|ulong|ushort)\\b)"
-	},
-	"suportFunctions":{
-		"name": "support.function.vbnet",
-		"match": "(?i:\\b(new|addressof|addhandler|removehandler|throw)\\b)"
-	},
+  	"storageModifiers":{
+  		"name": "storage.modifier.vbnet",
+		"match": "((?i:dim|public|private|protected|friend))"
+   	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
 		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using)\\b)"		
@@ -90,42 +125,7 @@
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
 		"match": "(?i:As|byval|byref|optional|handles)\\s+"
-	},
-	"characterOperator":{
-		"match": "((?i:\\.|\\+=|\\+|\\*=|\\*|\\\\=|\\\\|/=|/|=|-=|-|<|<=|>|>=|&=|&|\\^|\\^=|>>=|>>|<<=|<<))",
-		"name": "keyword.operator.vbnet"
-	},
-	"wordOperator":{
-		"match": "(?i:\\b(mod|not|and|andalso|or|orelse|in|is|isnot|xor)\\b)",
-		"name": "keyword.operator.vbnet"
-	},
-	"languageVariable":{
-		"match": "((?i:Me|MyBase|MyClass))\\.",
-		"name": "keyword.other.vbnet"
-	},
-	"languageContants":{
-		"match": "((?i:true|false|nothing))",
-		"name": "constant.language.vbnet"
-	},
-	"numericConstant": {
-		"match": "(-?\\d+(\\.?\\d?))",
-		"name": "constant.numeric.vbnet"
-	},
-	"quotedString": {
-		"begin": "(\")",
-	 	"beginCaptures":{
-	 		"1": { "name": "punctuation.definition.string.vbnet"}
-	 	},
-	 	"patterns": [
-		 	{  "name": "string.quoted.double.vbnet",
-		 	   "match": "([^\"]|\"\")*"
-		 	}
-	 	],
-	  	"end": "(\")",
-	  	"endCaptures": {
-	  		"1": { "name": "punctuation.definition.string.vbnet"}
-	  	}
-    }
+	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
 }
