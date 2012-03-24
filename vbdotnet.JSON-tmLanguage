@@ -2,6 +2,31 @@
   "scopeName": "source.vbnet", 
   "fileTypes": ["vb"], 
   "patterns": [
+	{   "name": "comment.line.singlequote.vb",
+	    "match": "'.*$",
+	    "comment": "single quote comment"
+	},
+	{   "name": "meta.function.vb",
+		"begin": "^\\s*((?i:public|protected|private|friend))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()([^)]*)(\\)).*\\n?",
+		"beginCaptures": {
+			"1": { "name": "storage.modifier.vb" },
+		    "2": { "name": "storage.type.function.vb" },
+		    "3": { "name": "entity.name.function.vb" },
+		    "4": { "name": "punctuation.definition.parameters.vb" },
+		    "5": { "name": "variable.parameter.function.vb" },
+		    "6": { "name": "punctuation.definition.parameters.vb" }
+		},
+		"patterns": [
+			{ "include": "$self" },
+			{  "name": "string.ssraw",
+				"match": "."
+			}
+		],
+		"end": "((?i:end){1}\\s*(?i:function|sub){1})",
+		"endCaptures": {
+			"1": {"name": "keyword.other.vb"}
+		}
+	}
   ],
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
 }
