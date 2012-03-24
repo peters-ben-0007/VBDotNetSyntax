@@ -137,7 +137,7 @@
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional|handles)\\s+"
+		"match": "(?i:As|byval|byref|optional|handles|inherits|implements)\\s+"
 	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
