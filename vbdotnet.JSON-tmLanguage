@@ -17,6 +17,9 @@
 	{ "include": "#moduleDefinition" },
 	{ "include": "#interfaceDefinition" },
   	{ "include": "#classDefinition" },
+  	{ "include": "#propertyDefinition" },
+  	{ "include": "#propertyGetDefinition" },
+  	{ "include": "#propertySetDefinition" },
 	{ "include": "#functionDefinition" },
 	{ "include": "#definitionEnd" },
 	{ "include": "#storageModifiers" },
@@ -126,6 +129,54 @@
 			"6": { "name": "entity.name.type.class.vbnet" }
 		}
 	},
+	"propertyDefinition":{
+		"name": "meta.property.vbnet",
+		"begin": "^\\s*((?i:default))?\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides))?\\s*((?i:shared))?\\s*((?i:shadows))?\\s*((?i:readonly|writeonly))?\\s*((?i:property))\\s*([a-zA-Z_]\\w*)\\s*(\\()?",
+		"beginCaptures":{
+			"1": { "name": "keyword.other.vbnet" },
+			"2": { "name": "storage.modifier.property.vbnet" },
+			"3": { "name": "storage.modifier.property.vbnet" },
+			"4": { "name": "keyword.other.vbnet" },
+			"5": { "name": "storage.modifier.shadows.property.vbnet" },
+			"6": { "name": "storage.modifier.readwrite.property.vbnet" },
+			"7": { "name": "storage.type.property.vbnet" },
+			"8": { "name": "entity.name.type.property.vbnet" },
+		    "9": { "name": "punctuation.definition.parameters.property.vbnet" }
+		},
+		"patterns": [
+			{ "include": "#otherKeywords" },
+			{ "include": "#supportTypes" }
+		],
+		"end": "(\\))?\\s*",
+		"endCaptures": {
+		    "1": { "name": "punctuation.definition.parameters.property.vbnet" }
+		}
+	},
+	"propertyGetDefinition":{
+		"name": "meta.property.getter.vbnet",
+		"match": "^\\s*((?i:protected friend|protected|friend|private))?\\s*((?i:get))",
+		"captures": {
+			"1": { "name": "storage.modifier.property.getter.vbnet" },
+			"2": { "name": "keyword.other.vbnet" }
+		}
+	},
+	"propertySetDefinition":{
+		"name": "meta.property.setter.vbnet",
+		"begin": "^\\s*((?i:protected friend|protected|friend|private))?\\s*((?i:set))\\s*(\\()?",
+		"beginCaptures": {
+			"1": { "name": "storage.modifier.property.setter.vbnet" },
+			"2": { "name": "keyword.other.vbnet" },
+			"3": { "name": "punctuation.definition.parameters.property.setter.vbnet" }
+		},
+		"patterns": [
+			{ "include": "#otherKeywords" },
+			{ "include": "#supportTypes" }
+		],
+		"end": "(\\))?\\s*",
+		"endCaptures": {
+		    "1": { "name": "punctuation.definition.parameters.property.setter.vbnet" }
+		}
+	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
 		"begin": "^\\s*((?i:partial))?\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides))?\\s*((?i:shared))?\\s*((?i:shadows))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()?",
@@ -150,7 +201,7 @@
 		}
 	},
 	"definitionEnd":{
-	   "match": "^\\s*((?i:end)){1}\\s*((?i:function|sub|class|namespace|module|interface))",
+	   "match": "^\\s*((?i:end)){1}\\s*((?i:function|sub|class|namespace|module|interface|property))",
 	   "captures": {
 			"1": {"name": "keyword.control.vbnet"},
 			"2": {"name": "storage.type.vbnet"}
@@ -166,7 +217,7 @@
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents)\\s+"
+		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get)\\s+"
 	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
