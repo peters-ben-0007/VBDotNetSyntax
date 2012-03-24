@@ -207,7 +207,7 @@
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get)\\s+"
+		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of)\\s+"
 	},
 	"region":{
 		"name": "meta.region.source.vbnet",
