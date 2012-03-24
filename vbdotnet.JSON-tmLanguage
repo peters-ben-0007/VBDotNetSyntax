@@ -111,24 +111,25 @@
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
-		"begin": "^\\s*((?i:public|protected|private|friend))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()",
+		"begin": "^\\s*((?i:partial))?\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides))?\\s*((?i:shared))?\\s*((?i:shadows))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()?",
 		"beginCaptures": {
 			"1": { "name": "storage.modifier.function.vbnet" },
-		    "2": { "name": "storage.type.function.vbnet" },
-		    "3": { "name": "entity.name.function.vbnet" },
-		    "4": { "name": "meta.parameters.vbnet"},
-		    "5": { "name": "punctuation.definition.parameters.vbnet" }
+			"2": { "name": "storage.modifier.function.vbnet" },
+			"3": { "name": "keyword.other.vbnet" },
+			"4": { "name": "storage.modifier.function.vbnet" },
+			"5": { "name": "storage.modifier.vbnet" },
+		    "6": { "name": "storage.type.function.vbnet" },
+		    "7": { "name": "entity.name.function.vbnet" },
+		    "8": { "name": "meta.parameters.vbnet"},
+		    "9": { "name": "punctuation.definition.parameters.vbnet" }
 		},
 		"patterns": [
 			{ "include": "#otherKeywords" },
 			{ "include": "#supportTypes" }
 		],
-		"end": "(\\))\\s*(((?i:as))\\s([a-zA-Z_]\\w*))?",
+		"end": "(\\))?\\s*",
 		"endCaptures": {
-		    "1": { "name": "punctuation.definition.parameters.vbnet" },
-		    "2": { "name": "meta.function.return-type.vbnet" },
-		    "3": { "name": "keyword.other.vbnet" },
-		    "4": { "name": "storage.type.vbnet" }
+		    "1": { "name": "punctuation.definition.parameters.vbnet" }
 		}
 	},
 	"definitionEnd":{
