@@ -6,6 +6,7 @@
   	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
+	{ "include": "#functionDefinitionEnd" },
 	{ "include": "#controlKeywords" },
 	{ "include": "#variable" },
 	{ "include": "#simpleVariable" },
@@ -48,24 +49,38 @@
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
-		"begin": "^\\s*((?i:public|protected|private|friend))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*((\\()([^)]*)(\\)))",
+		"begin": "^\\s*((?i:public|protected|private|friend))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()",
 		"beginCaptures": {
 			"1": { "name": "storage.modifier.function.vbnet" },
 		    "2": { "name": "storage.type.function.vbnet" },
 		    "3": { "name": "entity.name.function.vbnet" },
 		    "4": { "name": "meta.parameters.vbnet"},
-		    "5": { "name": "punctuation.definition.parameters.vbnet" },
-		    "6": { "name": "variable.parameter.function.vbnet" },
-		    "7": { "name": "punctuation.definition.parameters.vbnet" }
+		    "5": { "name": "punctuation.definition.parameters.vbnet" }
 		},
 		"patterns": [
-			{ "include": "$self" }
+			{
+ 				"name": "meta.parameters.vbnet",
+			    "match": "((?i:optional))?\\s*((?i:byval|byref))?\\s*([a-zA-Z_]\\w*)\\s*((?i:as))\\s*([a-zA-Z_]\\w*)",
+			    "captures": {
+			    	"1": { "name": "keyword.other.vbnet" },
+			        "2": { "name": "keyword.other.vbnet" },
+			        "3": { "name": "variable.parameter.vbnet" },
+			        "4": { "name": "keyword.other.vbnet" },
+			        "5": { "name": "storage.type.vbnet" }
+			    }
+			}
 		],
-		"end": "^((?i:end)){1}\\s*((?i:\\2)){1}",
+		"end": "(\\))",
 		"endCaptures": {
-			"1": {"name": "storage.modifier.function.vbnet"},
-			"2": {"name": "storage.type.function.vbnet"}
+		    "1": { "name": "punctuation.definition.parameters.vbnet" }
 		}
+	},
+	"functionDefinitionEnd":{
+	   "match": "^((?i:end)){1}\\s*((?i:function|sub)){1}",
+	   "captures": {
+			"1": {"name": "keyword.control.vbnet"},
+			"2": {"name": "storage.type.function.vbnet"}
+	   }
 	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
