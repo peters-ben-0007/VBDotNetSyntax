@@ -83,7 +83,7 @@
 		"name": "support.function.vbnet",
 		"match": "(?i:\\b(new|addressof|addhandler|removehandler|throw)\\b)"
 	},
-		"languageVariable":{
+	"languageVariable":{
 		"match": "((?i:Me|MyBase|MyClass))\\.",
 		"name": "keyword.other.vbnet"
 	},
@@ -108,8 +108,8 @@
 		"name": "meta.interface.vbnet",
 		"match": "^\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:shadows))?\\s*((?i:interface))\\s*([a-zA-Z_]\\w*)\\s*",
 		"captures": {
-		    "1": { "name": "storage.modifier.class.vbnet" },
-			"2": { "name": "storage.modifier.class.vbnet" },
+		    "1": { "name": "storage.modifier.interface.vbnet" },
+			"2": { "name": "storage.modifier.interface.vbnet" },
 			"3": { "name": "storage.type.interface.vbnet" },
 			"4": { "name": "entity.name.type.interface.vbnet" }
 		}
@@ -158,7 +158,7 @@
 	},
   	"storageModifiers":{
   		"name": "storage.modifier.vbnet",
-		"match": "((?i:dim|public|private|protected|friend))"
+		"match": "((?i:dim|public|private|protected friend|protected|friend|shadows|static|shared|readonly))"
    	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
@@ -166,7 +166,7 @@
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional|handles|inherits|implements)\\s+"
+		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents)\\s+"
 	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
