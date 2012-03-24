@@ -8,8 +8,8 @@
 	{ "include": "#languageVariable" },
 	{ "include": "#operator" },
 	{ "include": "#languageContants" },
-	{ "include": "#numericConstant" },
 	{ "include": "#quotedString" },
+	{ "include": "#numericConstant" },
   	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
@@ -76,26 +76,26 @@
 	},
 	"supportTypes":{
 		"name": "support.type.vbnet",
-		"match": "(?i:integer|decimal|double|single|date|long|short|char|string|byte|date|boolean)"
+		"match": "(?i:\\b(integer|decimal|double|single|date|long|short|char|string|byte|date|boolean|delegate|event|enum|sbyte|uinteger|ulong|ushort)\\b)"
 	},
 	"suportFunctions":{
 		"name": "support.function.vbnet",
-		"match": "(?i:new)"
+		"match": "(?i:\\b(new|addressof|addhandler|removehandler|throw)\\b)"
 	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
-		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step)\\b)"		
+		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using)\\b)"		
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional)\\s+"
+		"match": "(?i:As|byval|byref|optional|handles)\\s+"
 	},
 	"operator":{
-		"match": "((?i:mod|\\.|\\+|\\*|\\\\|/|=|-|<|<=|>|>=|not))",
-		"name": "language.operator.vbnet"
+		"match": "((?i:mod|\\.|\\+=|\\+|\\*=|\\*|\\\\=|\\\\|/=|/|=|-=|-|<|<=|>|>=|&=|&|\\^|\\^=|>>=|>>|<<=|<<|not|and|andalso|or|orelse|in|is|isnot|xor))",
+		"name": "keyword.operator.vbnet"
 	},
 	"languageVariable":{
-		"match": "((?i:Me|MyBase))\\.",
+		"match": "((?i:Me|MyBase|MyClass))\\.",
 		"name": "keyword.other.vbnet"
 	},
 	"languageContants":{
