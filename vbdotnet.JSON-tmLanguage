@@ -203,7 +203,7 @@
    	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
-		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using)\\b)"		
+		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent)\\b)"		
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
