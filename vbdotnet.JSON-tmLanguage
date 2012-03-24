@@ -88,11 +88,14 @@
 	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
-		"match": "^\\s*((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
+		"match": "^\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:shadows))?\\s*((?i:mustinherit|notinheritable))?\\s*((?i:partial))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
 		"captures": {
 			"1": { "name": "storage.modifier.class.vbnet" },
-			"2": { "name": "storage.type.class.vbnet" },
-			"3": { "name": "entity.name.type.class.vbnet" }
+			"2": { "name": "storage.modifier.class.vbnet" },
+			"3": { "name": "storage.modifier.class.vbnet" },
+			"4": { "name": "storage.modifier.class.vbnet" },
+			"5": { "name": "storage.type.class.vbnet" },
+			"6": { "name": "entity.name.type.class.vbnet" }
 		}
 	},
 	"functionDefinition": {
