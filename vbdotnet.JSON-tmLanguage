@@ -6,11 +6,12 @@
   	{ "include": "#supportTypes" },
   	{ "include": "#suportFunctions" },
 	{ "include": "#languageVariable" },
-	{ "include": "#operator" },
+	{ "include": "#numericConstant" },
+	{ "include": "#characterOperator" },
+	{ "include": "#wordOperator" },
 	{ "include": "#languageContants" },
 	{ "include": "#quotedString" },
-	{ "include": "#numericConstant" },
-  	{ "include": "#namespaceDefinition" },
+	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
 	{ "include": "#definitionEnd" },
@@ -90,8 +91,12 @@
 		"name": "keyword.other.vbnet",
 		"match": "(?i:As|byval|byref|optional|handles)\\s+"
 	},
-	"operator":{
-		"match": "((?i:mod|\\.|\\+=|\\+|\\*=|\\*|\\\\=|\\\\|/=|/|=|-=|-|<|<=|>|>=|&=|&|\\^|\\^=|>>=|>>|<<=|<<|not|and|andalso|or|orelse|in|is|isnot|xor))",
+	"characterOperator":{
+		"match": "((?i:\\.|\\+=|\\+|\\*=|\\*|\\\\=|\\\\|/=|/|=|-=|-|<|<=|>|>=|&=|&|\\^|\\^=|>>=|>>|<<=|<<))",
+		"name": "keyword.operator.vbnet"
+	},
+	"wordOperator":{
+		"match": "(?i:\\b(mod|not|and|andalso|or|orelse|in|is|isnot|xor)\\b)",
 		"name": "keyword.operator.vbnet"
 	},
 	"languageVariable":{
@@ -103,7 +108,7 @@
 		"name": "constant.language.vbnet"
 	},
 	"numericConstant": {
-		"match": "([^a-zA-Z_]\\d+)",
+		"match": "(-?\\d+(\\.?\\d?))",
 		"name": "constant.numeric.vbnet"
 	},
 	"quotedString": {
