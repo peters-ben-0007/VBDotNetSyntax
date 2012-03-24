@@ -3,6 +3,12 @@
   "fileTypes": ["vb"], 
   "patterns": [
   	{ "include": "#singleLineComment" },
+  	{ "include": "#supportTypes" },
+	{ "include": "#languageVariable" },
+	{ "include": "#operator" },
+	{ "include": "#languageContants" },
+	{ "include": "#numericConstant" },
+	{ "include": "#quotedString" },
   	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
@@ -10,12 +16,7 @@
 	{ "include": "#controlKeywords" },
 	{ "include": "#otherKeywords" },
 	{ "include": "#variable" },
-	{ "include": "#simpleVariable" },
-	{ "include": "#languageVariable" },
-	{ "include": "#operator" },
-	{ "include": "#languageContants" },
-	{ "include": "#numericConstant" },
-	{ "include": "#quotedString" }
+	{ "include": "#simpleVariable" }
   ],
   "repository": {
   	"simpleVariable":{
@@ -118,6 +119,10 @@
 			"1": { "name": "storage.modifier.namespace.vbnet" },
 			"2": { "name": "storage.type.namespace.vbnet" }
 		}
+	},
+	"supportTypes":{
+		"name": "support.type.vbnet",
+		"match": "(?i:integer|decimal|double|single|date|long|short|char|string|byte|date|boolean)"
 	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
