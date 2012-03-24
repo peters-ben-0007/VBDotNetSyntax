@@ -33,6 +33,20 @@
 		"match": "'.*$",
 		"comment": "single quote comment"
 	},
+	"region":{
+		"name": "meta.region.source.vbnet",
+		"begin": "^\\s*((?i:#region))",
+		"beginCaptures": {
+			"1": { "name": "keyword.other.vbnet" }
+		},
+		"patterns": [
+			{ "include": "$self" }
+		],
+		"end": "^\\s*((?i:#end region))",
+		"endCaptures": {
+			"1": { "name": "keyword.other.vbnet" }
+		}
+	},
   	"quotedString": {
 	    "name": "string.quoted.double.vbnet",
 		"match": "(\")([^\"]|\"\")*(\")"
@@ -208,20 +222,6 @@
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
 		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of)\\s+"
-	},
-	"region":{
-		"name": "meta.region.source.vbnet",
-		"begin": "^\\s*((?i:#region))",
-		"beginCaptures": {
-			"1": { "name": "keyword.other.vbnet" }
-		},
-		"patterns": [
-			{ "include": "$self" }
-		],
-		"end": "^\\s*((?i:#end region))",
-		"endCaptures": {
-			"1": { "name": "keyword.other.vbnet" }
-		}
 	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
