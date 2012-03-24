@@ -12,7 +12,7 @@
   	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
-	{ "include": "#functionDefinitionEnd" },
+	{ "include": "#definitionEnd" },
 	{ "include": "#controlKeywords" },
 	{ "include": "#otherKeywords" },
 	{ "include": "#variable" },
@@ -80,8 +80,8 @@
 		    "4": { "name": "storage.type.vbnet" }
 		}
 	},
-	"functionDefinitionEnd":{
-	   "match": "^((?i:end)){1}\\s*((?i:function|sub)){1}",
+	"definitionEnd":{
+	   "match": "^((?i:end)){1}\\s*((?i:function|sub|class|namespace))",
 	   "captures": {
 			"1": {"name": "keyword.control.vbnet"},
 			"2": {"name": "storage.type.function.vbnet"}
@@ -89,35 +89,19 @@
 	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
-		"begin": "^((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
-		"beginCaptures": {
+		"match": "^((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
+		"captures": {
 			"1": { "name": "storage.modifier.class.vbnet" },
 			"2": { "name": "storage.type.class.vbnet" },
 			"3": { "name": "entity.name.type.vbnet" }
-		},
-		"patterns": [
-			{ "include": "$self" }
-		],
-		"end": "^((?i:end))\\s*((?i:class))",
-		"endCaptures": {
-			"1": { "name": "storage.modifier.class.vbnet" },
-			"2": { "name": "storage.type.class.vbnet" }
 		}
 	},
 	"namespaceDefinition":{
-		"name": "meta.class.vbnet",
-		"begin": "^((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
-		"beginCaptures": {
+		"name": "meta.namespace.vbnet",
+		"match": "^((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
+		"captures": {
 			"1": { "name": "storage.modifier.namespace.vbnet" },
-			"3": { "name": "entity.name.type.vbnet" }
-		},
-		"patterns": [
-			{ "include": "$self" }
-		],
-		"end": "^((?i:end))\\s*((?i:namespace))",
-		"endCaptures": {
-			"1": { "name": "storage.modifier.namespace.vbnet" },
-			"2": { "name": "storage.type.namespace.vbnet" }
+			"2": { "name": "entity.name.type.vbnet" }
 		}
 	},
 	"supportTypes":{
