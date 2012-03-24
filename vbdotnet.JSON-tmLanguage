@@ -6,6 +6,7 @@
   	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
+	{ "include": "#controlKeywords" },
 	{ "include": "#variable" },
 	{ "include": "#simpleVariable" },
 	{ "include": "#languageVariable" },
