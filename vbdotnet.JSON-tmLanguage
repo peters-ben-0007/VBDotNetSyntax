@@ -8,6 +8,7 @@
 	{ "include": "#functionDefinition" },
 	{ "include": "#functionDefinitionEnd" },
 	{ "include": "#controlKeywords" },
+	{ "include": "#otherKeywords" },
 	{ "include": "#variable" },
 	{ "include": "#simpleVariable" },
 	{ "include": "#languageVariable" },
@@ -70,9 +71,12 @@
 			    }
 			}
 		],
-		"end": "(\\))",
+		"end": "(\\))\\s*(((?i:as))\\s([a-zA-Z_]\\w*))?",
 		"endCaptures": {
-		    "1": { "name": "punctuation.definition.parameters.vbnet" }
+		    "1": { "name": "punctuation.definition.parameters.vbnet" },
+		    "2": { "name": "meta.function.return-type.vbnet" },
+		    "3": { "name": "keyword.other.vbnet" },
+		    "4": { "name": "storage.type.vbnet" }
 		}
 	},
 	"functionDefinitionEnd":{
@@ -117,7 +121,11 @@
 	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
-		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf)\\b)"		
+		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step)\\b)"		
+	},
+	"otherKeywords":{
+		"name": "keyword.other.vbnet",
+		"match": "(?i:As)"
 	},
 	"operator":{
 		"match": "((?i:mod|\\.|\\+|\\*|\\\\|/|=|-|<|<=|>|>=|not))",
