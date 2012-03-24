@@ -4,19 +4,28 @@
   "patterns": [
 	{ "include": "#singleLineComment" },
 	{ "include": "#functionDefinition" },
-	{ "include": "#moduleVariable" }
+	{ "include": "#moduleVariable" },
+	{ "include": "#simpleModuleVariable" }
 	
   ],
   "repository": {
-  	"localVariable":{
+  	"simpleLocalVariable":{
   		"name": "meta.variable",
-	    "match": "^\\s*((?i:dim))\\s+([a-zA-Z_]\\w+)\\s+((?i:as))\\s*(([a-zA-Z_]\\w+)|((?i:new))\\s*([a-zA-Z_]\\w+)((\\()([^)]*)(\\)))?)$",
+	    "match": "^\\s*((?i:dim))\\s+([a-zA-Z_]\\w+)\\s+((?i:as))\\s*([a-zA-Z_]\\w+)",
 	    "captures": {
 	       "1": { "name": "storage.modifier.vbnet" },
-	       "2": { "name": "entity.name.variable.vbnet" },
+	       "2": { "name": "entity.name.vbnet" },
 	       "3": { "name": "keyword.other.vbnet" },
-	       "4": { "name": "meta.variable.type.vbnet"},
-	       "5": { "name": "storage.type.vbnet"},
+	       "4": { "name": "storage.type.vbnet"}
+	   }
+  	},
+	"localVariable":{
+  		"name": "meta.variable",
+	    "match": "^\\s*((?i:dim))\\s+([a-zA-Z_]\\w+)\\s+((?i:as))\\s*((?i:new))\\s+([a-zA-Z_]\\w+)((\\()([^)]*)(\\)))?",
+	    "captures": {
+	       "1": { "name": "storage.modifier.vbnet" },
+	       "2": { "name": "variable.vbnet" },
+	       "3": { "name": "keyword.other.vbnet" },
 	       "4": { "name": "support.function.vbnet" }, 
 	       "5": { "name": "storage.type.vbnet"},
 	       "6": { "name": "meta.parameters.vbnet"},
@@ -25,16 +34,31 @@
 		   "9": { "name": "punctuation.definition.parameters.vbnet" }
 	   }
   	},
-  	"moduleVariable":{
+  	"simpleModuleVariable":{
   		"name": "meta.variable",
-	    "match": "^\\s*((?i:public|private|protected|friend)){1}\\s*([a-zA-Z_]\\w*)\\s*((?i:as))?\\s*([a-zA-Z_]\\w*)$",
+	    "match": "^\\s*((?i:private|protected|public|friend))\\s+([a-zA-Z_]\\w+)\\s+((?i:as))\\s*([a-zA-Z_]\\w+)",
 	    "captures": {
 	       "1": { "name": "storage.modifier.vbnet" },
-	       "2": { "name": "entity.name.variable.vbnet" },
+	       "2": { "name": "entity.name.vbnet" },
 	       "3": { "name": "keyword.other.vbnet" },
 	       "4": { "name": "storage.type.vbnet"}
-		}
-	},
+	   }
+  	},
+	"moduleVariable":{
+  		"name": "meta.variable",
+	    "match": "^\\s*((?i:private|protected|public|friend))\\s+([a-zA-Z_]\\w+)\\s+((?i:as))\\s*((?i:new))\\s+([a-zA-Z_]\\w+)((\\()([^)]*)(\\)))?",
+	    "captures": {
+	       "1": { "name": "storage.modifier.vbnet" },
+	       "2": { "name": "variable.vbnet" },
+	       "3": { "name": "keyword.other.vbnet" },
+	       "4": { "name": "support.function.vbnet" }, 
+	       "5": { "name": "storage.type.vbnet"},
+	       "6": { "name": "meta.parameters.vbnet"},
+	       "7": { "name": "punctuation.definition.parameters.vbnet" },
+		   "8": { "name": "variable.function.vbnet" },
+		   "9": { "name": "punctuation.definition.parameters.vbnet" }
+	   }
+  	},
   	"singleLineComment": {
 		"name": "comment.line.singlequote.vbnet",
 		"match": "'.*$",
@@ -54,11 +78,12 @@
 		},
 		"patterns": [
 			{ "include": "#singleLineComment" },
-			{ "include": "#localVariable" }
+			{ "include": "#localVariable" },
+			{ "include": "#simpleLocalVariable" }
 		],
 		"end": "((?i:end)){1}\\s*(\\2){1}",
 		"endCaptures": {
-			"1": {"name": "keyword.other.vbnet"},
+			"1": {"name": "storage.modifier.function.vbnet"},
 			"2": {"name": "storage.type.function.vbnet"}
 		}
 	}
