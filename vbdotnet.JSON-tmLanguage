@@ -3,6 +3,7 @@
   "fileTypes": ["vb"], 
   "patterns": [
   	{ "include": "#singleLineComment" },
+  	{ "include": "#namespaceDefinition" },
   	{ "include": "#classDefinition" },
 	{ "include": "#functionDefinition" },
 	{ "include": "#variable" },
@@ -68,7 +69,7 @@
 		"name": "meta.class.vbnet",
 		"begin": "^((?i:public|private|protected|friend))?\\s*((?i:class))\\s*([a-zA-Z_]\\w*)\\s*",
 		"beginCaptures": {
-			"1": { "name": "storage.modified.class.vbnet" },
+			"1": { "name": "storage.modifier.class.vbnet" },
 			"2": { "name": "storage.type.class.vbnet" },
 			"3": { "name": "entity.name.type.vbnet" }
 		},
@@ -77,8 +78,24 @@
 		],
 		"end": "^((?i:end))\\s*((?i:class))",
 		"endCaptures": {
-			"1": { "name": "storage.modified.class.vbnet" },
+			"1": { "name": "storage.modifier.class.vbnet" },
 			"2": { "name": "storage.type.class.vbnet" }
+		}
+	},
+	"namespaceDefinition":{
+		"name": "meta.class.vbnet",
+		"begin": "^((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
+		"beginCaptures": {
+			"1": { "name": "storage.modifier.namespace.vbnet" },
+			"3": { "name": "entity.name.type.vbnet" }
+		},
+		"patterns": [
+			{ "include": "$self" }
+		],
+		"end": "^((?i:end))\\s*((?i:namespace))",
+		"endCaptures": {
+			"1": { "name": "storage.modifier.namespace.vbnet" },
+			"2": { "name": "storage.type.namespace.vbnet" }
 		}
 	},
 	"controlKeywords":{
