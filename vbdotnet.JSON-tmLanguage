@@ -34,19 +34,8 @@
 		"comment": "single quote comment"
 	},
   	"quotedString": {
-		"begin": "(\")",
-	 	"beginCaptures":{
-	 		"1": { "name": "punctuation.definition.string.vbnet"}
-	 	},
-	 	"patterns": [
-		 	{  "name": "string.quoted.double.vbnet",
-		 	   "match": "([^\"]|\"\")*"
-		 	}
-	 	],
-	  	"end": "(\")",
-	  	"endCaptures": {
-	  		"1": { "name": "punctuation.definition.string.vbnet"}
-	  	}
+	    "name": "string.quoted.double.vbnet",
+		"match": "(\")([^\"]|\"\")*(\")"
     },
     "compilerOption": {
     	"match" :"^\\s*((?i:option))\\s*((?i:strict|infer|explicit|compare))\\s*((?i:on|off|binary|text))",
