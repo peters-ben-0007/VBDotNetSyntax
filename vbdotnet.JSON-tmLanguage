@@ -169,7 +169,7 @@
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
-		"begin": "^\\s*((?i:partial))?\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides))?\\s*((?i:shared))?\\s*((?i:shadows))?\\s*((?i:function|sub))\\s*([a-zA-Z_]\\w*)\\s*(\\()?",
+		"begin": "^\\s*((?i:partial))?\\s*((?i:public|private|protected friend|protected|friend))?\\s*((?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides))?\\s*((?i:shared))?\\s*((?i:shadows))?\\s*((?i:function|sub))\\s+([a-zA-Z_]\\w*)\\s*(\\()?",
 		"beginCaptures": {
 			"1": { "name": "storage.modifier.function.vbnet" },
 			"2": { "name": "storage.modifier.function.vbnet" },
