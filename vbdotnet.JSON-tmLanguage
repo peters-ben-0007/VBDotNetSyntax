@@ -4,6 +4,7 @@
   "patterns": [
   	{ "include": "#singleLineComment" },
 	{ "include": "#quotedString" },
+	{ "include": "#compilerOption" },
 	{ "include": "#numericConstant" },
 	{ "include": "#characterOperator" },
 	{ "include": "#wordOperator" },
@@ -42,6 +43,14 @@
 	  		"1": { "name": "punctuation.definition.string.vbnet"}
 	  	}
     },
+    "compilerOption": {
+    	"match" :"^\\s*((?i:option))\\s*((?i:strict|infer|explicit|compare))\\s*((?i:on|off|binary|text))",
+    	"captures": {
+    	    "1": { "name": "keyword.other.compiler-option.vbnet" },
+    	    "2": { "name": "support.constant.compiler-option.vbnet" },
+    	    "3": { "name": "constant.language.option-value.vbnet" }
+    	}
+	},
     "numericConstant": {
 		"match": "(-?\\d+(\\.?\\d?))",
 		"name": "constant.numeric.vbnet"
