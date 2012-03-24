@@ -11,7 +11,7 @@
 	{ "include": "#languageVariable" },
 	{ "include": "#operator" },
 	{ "include": "#languageContants" },
-	{ "include": "#numericContant" },
+	{ "include": "#numericConstant" },
 	{ "include": "#quotedString" }
   ],
   "repository": {
@@ -115,7 +115,7 @@
 		"match": "((?i:true|false|nothing))",
 		"name": "constant.language.vbnet"
 	},
-	"numericContant": {
+	"numericConstant": {
 		"match": "([^a-zA-Z_]\\d+)",
 		"name": "constant.numeric.vbnet"
 	},
