@@ -1,0 +1,11 @@
+Basic syntax definition for VB.NET for Sublime Text 2.
+
+Install:
+Copy the vbdontnet.tmlanguage file into you Sublime Text 2 packages directory.
+
+Open Sublime - there should now be a "VB.NET" option under the "syntax" menu
+
+Editing:
+This syntax definition is built using the "AAAPackageDev" package for Sublime Text 2. You will need to install this first.
+To make changes to the syntax defintion, first edit the vbdotnet.JSON-tmlanguage file. Then build the .tmlanguage file using the
+"Json to tmlanguage" build option.
