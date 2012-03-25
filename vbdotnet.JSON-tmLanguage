@@ -96,7 +96,7 @@
 	},
 	"namespaceDefinition":{
 		"name": "meta.namespace.vbnet",
-		"match": "\\b((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
+		"match": "\\b((?i:namespace))\\s+([a-zA-Z_]\\w*)\\s*",
 		"captures": {
 			"1": { "name": "storage.type.namespace.vbnet" },
 			"2": { "name": "entity.name.type.namespace.vbnet" }
@@ -104,7 +104,7 @@
 	},
 	"moduleDefinition":{
 		"name": "meta.module.vbnet",
-		"match": "(?i:\\b(module)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(module)\\s+([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
 		    "1": { "name": "storage.type.module.vbnet" },
 		    "2": { "name": "entity.name.type.module.vbnet" }
@@ -112,7 +112,7 @@
 	},
 	"interfaceDefinition":{
 		"name": "meta.interface.vbnet",
-		"match": "(?i:\\b(interface)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(interface)\\s+([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
 		  	"1": { "name": "storage.type.interface.vbnet" },
 			"2": { "name": "entity.name.type.interface.vbnet" }
@@ -120,7 +120,7 @@
 	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
-		"match": "(?i:\\b(class)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(class)\\s+([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
 			"1": { "name": "storage.type.class.vbnet" },
 			"2": { "name": "entity.name.type.class.vbnet" }
@@ -128,7 +128,7 @@
 	},
 	"propertyDefinition":{
 		"name": "meta.property.vbnet",
-		"begin": "(?i:\\b(property)\\s*([a-zA-Z_]\\w*)\\s*(\\()?)",
+		"begin": "(?i:\\b(property)\\s+([a-zA-Z_]\\w*)\\s*(\\()?)",
 		"beginCaptures":{
 			"1": { "name": "storage.type.property.vbnet" },
 			"2": { "name": "entity.name.type.property.vbnet" },
@@ -145,7 +145,7 @@
 	},
 	"propertyGetSet":{
 		"name": "keyword.other.property.accessor.vbnet",
-		"match": "(?i:^\\s*(protected friend|protected|friend|private)?\\s*(get|set)\\s*\\(?)"
+		"match": "(?i:^\\s*(protected friend|protected|friend|private)?\\s+(get|set)\\s*\\(?)"
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
