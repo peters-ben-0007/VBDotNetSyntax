@@ -13,6 +13,7 @@
 	{ "include": "#languageContants" },
   	{ "include": "#supportTypes" },
   	{ "include": "#suportFunctions" },
+  	{ "include": "#linqKeywords" },
 	{ "include": "#languageVariable" },
 	{ "include": "#namespaceDefinition" },
 	{ "include": "#moduleDefinition" },
@@ -178,9 +179,13 @@
   		"name": "storage.modifier.access.vbnet",
 		"match": "\\b(?i:dim|public|private|protected friend|protected|friend|shadows|static|shared|readonly|default|partial|readonly|writeonly|erase|redim|lib)\\b"
    	},
+   	"linqKeywords":{
+   		"name": "keyword.control.linq.vbnet",
+   		"match": "(?i:\\b(from|aggregate|select|where|order by|join|groupp by|into|group join|equals|let|distinct|skip|skip while|take|take while)\\b)"
+	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
-		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent|Stop)\\b)"		
+		"match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent|Stop)\\b)"
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
