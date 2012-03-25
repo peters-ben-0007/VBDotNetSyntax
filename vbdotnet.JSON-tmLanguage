@@ -18,12 +18,12 @@
 	{ "include": "#moduleDefinition" },
 	{ "include": "#interfaceDefinition" },
   	{ "include": "#classDefinition" },
+  	{ "include": "#functionDefinition" },
   	{ "include": "#propertyDefinition" },
-  	{ "include": "#propertyGetDefinition" },
-  	{ "include": "#propertySetDefinition" },
-	{ "include": "#functionDefinition" },
+  	{ "include": "#propertyGetSet" },
 	{ "include": "#definitionEnd" },
 	{ "include": "#storageModifiers" },
+	{ "include": "#inheritanceModifiers" },
 	{ "include": "#controlKeywords" },
 	{ "include": "#otherKeywords" }
   ],
@@ -96,56 +96,43 @@
 	},
 	"namespaceDefinition":{
 		"name": "meta.namespace.vbnet",
-		"match": "^\\s*((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
+		"match": "\\b((?i:namespace))\\s*([a-zA-Z_]\\w*)\\s*",
 		"captures": {
-			"1": { "name": "storage.modifier.namespace.vbnet" },
+			"1": { "name": "storage.type.namespace.vbnet" },
 			"2": { "name": "entity.name.type.namespace.vbnet" }
 		}
 	},
 	"moduleDefinition":{
 		"name": "meta.module.vbnet",
-		"match": "(?i:^\\s*(public|friend)?\\s*(module)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(module)\\s*([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
-		    "1": { "name": "storage.modifier.module.vbnet" },
-		    "2": { "name": "storage.type.module.vbnet" },
-		    "3": { "name": "entity.name.type.module.vbnet" }
+		    "1": { "name": "storage.type.module.vbnet" },
+		    "2": { "name": "entity.name.type.module.vbnet" }
 		}
 	},
 	"interfaceDefinition":{
 		"name": "meta.interface.vbnet",
-		"match": "(?i:^\\s*(public|private|protected friend|protected|friend)?\\s*(shadows)?\\s*(interface)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(interface)\\s*([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
-		    "1": { "name": "storage.modifier.interface.vbnet" },
-			"2": { "name": "storage.modifier.interface.vbnet" },
-			"3": { "name": "storage.type.interface.vbnet" },
-			"4": { "name": "entity.name.type.interface.vbnet" }
+		  	"1": { "name": "storage.type.interface.vbnet" },
+			"2": { "name": "entity.name.type.interface.vbnet" }
 		}
 	},
 	"classDefinition":{
 		"name": "meta.class.vbnet",
-		"match": "(?i:^\\s*(public|private|protected friend|protected|friend)?\\s*(shadows)?\\s*(mustinherit|notinheritable)?\\s*(partial)?\\s*(class)\\s*([a-zA-Z_]\\w*)\\s*)",
+		"match": "(?i:\\b(class)\\s*([a-zA-Z_]\\w*)\\s*)",
 		"captures": {
-			"1": { "name": "storage.modifier.class.vbnet" },
-			"2": { "name": "storage.modifier.class.vbnet" },
-			"3": { "name": "storage.modifier.class.vbnet" },
-			"4": { "name": "storage.modifier.class.vbnet" },
-			"5": { "name": "storage.type.class.vbnet" },
-			"6": { "name": "entity.name.type.class.vbnet" }
+			"1": { "name": "storage.type.class.vbnet" },
+			"2": { "name": "entity.name.type.class.vbnet" }
 		}
 	},
 	"propertyDefinition":{
 		"name": "meta.property.vbnet",
-		"begin": "(?i:^\\s*(default)?\\s*(public|private|protected friend|protected|friend)?\\s*(overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides)?\\s*(shared)?\\s*(shadows)?\\s*(readonly|writeonly)?\\s*(property)\\s*([a-zA-Z_]\\w*)\\s*(\\()?)",
+		"begin": "(?i:\\b(property)\\s*([a-zA-Z_]\\w*)\\s*(\\()?)",
 		"beginCaptures":{
-			"1": { "name": "keyword.other.vbnet" },
-			"2": { "name": "storage.modifier.property.vbnet" },
-			"3": { "name": "storage.modifier.property.vbnet" },
-			"4": { "name": "keyword.other.vbnet" },
-			"5": { "name": "storage.modifier.shadows.property.vbnet" },
-			"6": { "name": "storage.modifier.readwrite.property.vbnet" },
-			"7": { "name": "storage.type.property.vbnet" },
-			"8": { "name": "entity.name.type.property.vbnet" },
-		    "9": { "name": "punctuation.definition.parameters.property.vbnet" }
+			"1": { "name": "storage.type.property.vbnet" },
+			"2": { "name": "entity.name.type.property.vbnet" },
+		    "3": { "name": "punctuation.definition.parameters.property.vbnet" }
 		},
 		"patterns": [
 			{ "include": "#otherKeywords" },
@@ -156,44 +143,18 @@
 		    "1": { "name": "punctuation.definition.parameters.property.vbnet" }
 		}
 	},
-	"propertyGetDefinition":{
-		"name": "meta.property.getter.vbnet",
-		"match": "(?i:^\\s*(protected friend|protected|friend|private)?\\s*(get))",
-		"captures": {
-			"1": { "name": "storage.modifier.property.getter.vbnet" },
-			"2": { "name": "keyword.other.vbnet" }
-		}
-	},
-	"propertySetDefinition":{
-		"name": "meta.property.setter.vbnet",
-		"begin": "(?i:^\\s*(protected friend|protected|friend|private)?\\s*(set)\\s*(\\()?)",
-		"beginCaptures": {
-			"1": { "name": "storage.modifier.property.setter.vbnet" },
-			"2": { "name": "keyword.other.vbnet" },
-			"3": { "name": "punctuation.definition.parameters.property.setter.vbnet" }
-		},
-		"patterns": [
-			{ "include": "#otherKeywords" },
-			{ "include": "#supportTypes" }
-		],
-		"end": "(\\))?\\s*",
-		"endCaptures": {
-		    "1": { "name": "punctuation.definition.parameters.property.setter.vbnet" }
-		}
+	"propertyGetSet":{
+		"name": "keyword.other.property.accessor.vbnet",
+		"match": "(?i:^\\s*(protected friend|protected|friend|private)?\\s*(get|set)\\s*\\(?)"
 	},
 	"functionDefinition": {
 		"name": "meta.function.vbnet",
-		"begin": "(?i:^\\s*(partial)?\\s*(public|private|protected friend|protected|friend)?\\s*(overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides)?\\s*(shared)?\\s*(shadows)?\\s*(function|sub)\\s+([a-zA-Z_]\\w*)\\s*(\\()?)",
+		"begin": "(?i:\\b(function|sub)\\s+([a-zA-Z_]\\w*)\\s*(\\()?)",
 		"beginCaptures": {
-			"1": { "name": "storage.modifier.function.vbnet" },
-			"2": { "name": "storage.modifier.function.vbnet" },
-			"3": { "name": "keyword.other.vbnet" },
-			"4": { "name": "storage.modifier.function.vbnet" },
-			"5": { "name": "storage.modifier.vbnet" },
-		    "6": { "name": "storage.type.function.vbnet" },
-		    "7": { "name": "entity.name.function.vbnet" },
-		    "8": { "name": "meta.parameters.vbnet"},
-		    "9": { "name": "punctuation.definition.parameters.vbnet" }
+			"1": { "name": "support.type.function.vbnet" },
+		    "2": { "name": "entity.name.function.vbnet" },
+		    "3": { "name": "meta.parameters.vbnet"},
+		    "4": { "name": "punctuation.definition.parameters.vbnet" }
 		},
 		"patterns": [
 			{ "include": "#otherKeywords" },
@@ -206,14 +167,15 @@
 	},
 	"definitionEnd":{
 	   "match": "(?i:^\\s*(end){1}\\s*(function|sub|class|namespace|module|interface|property))",
-	   "captures": {
-			"1": {"name": "keyword.control.vbnet"},
-			"2": {"name": "keyword.control.definition-block.vbnet"}
-	   }
+	   "name": "keyword.control.end-definition.vbnet"
+	},
+	"inheritanceModifiers":{
+		"name": "storage.modifier.inheritance.vbnet",
+		"match": "(?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides|mustinherit|notinheritable)"
 	},
   	"storageModifiers":{
-  		"name": "storage.modifier.vbnet",
-		"match": "((?i:dim|public|private|protected friend|protected|friend|shadows|static|shared|readonly))"
+  		"name": "storage.modifier.access.vbnet",
+		"match": "\\b(?i:dim|public|private|protected friend|protected|friend|shadows|static|shared|readonly|default|partial|readonly|writeonly)\\b"
    	},
 	"controlKeywords":{
 		"name": "keyword.control.vbnet",
