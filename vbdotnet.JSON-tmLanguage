@@ -67,7 +67,7 @@
 		}
 	},
     "numericConstant": {
-		"match": "(-?\\d+(\\.?\\d?))",
+		"match": "\\b(-?\\d+(\\.?\\d?)*)",
 		"name": "constant.numeric.vbnet"
 	},
 	"characterOperator":{
