@@ -25,7 +25,8 @@
 	{ "include": "#storageModifiers" },
 	{ "include": "#inheritanceModifiers" },
 	{ "include": "#controlKeywords" },
-	{ "include": "#otherKeywords" }
+	{ "include": "#otherKeywords" },
+	{ "include": "#vbFunctions" }
   ],
   "repository": {
   	"singleLineComment": {
@@ -91,7 +92,7 @@
 		"match": "(?i:\\b(new|addressof|addhandler|removehandler|throw)\\b)"
 	},
 	"languageVariable":{
-		"match": "((?i:Me|MyBase|MyClass))\\.",
+		"match": "\\b((?i:Me|MyBase|MyClass))\\.",
 		"name": "keyword.other.vbnet"
 	},
 	"namespaceDefinition":{
@@ -183,7 +184,13 @@
 	},
 	"otherKeywords":{
 		"name": "keyword.other.vbnet",
-		"match": "(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of)\\s+"
+		"match": "\\b(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of)\\s+"
+	},
+	"vbFunctions":{
+		"match": "\\b((?i:CBool|CByte|CChar|CDate|CDbl|CDec|Char|CInt|CLng|CObj|CSByte|CShort|CSng|CStr|CType|CUInt|CULng|CUShort|DirectCast))\\(",
+		"captures": {
+		    "1": { "name": "support.function.vbnet" }
+		}
 	}
   },
   "uuid": "975d5447-0eb5-444c-a471-5934193ca1ea"
