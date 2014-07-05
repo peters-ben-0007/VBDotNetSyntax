@@ -92,6 +92,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#lambdaDefinition</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#propertyDefinition</string>
 		</dict>
 		<dict>
@@ -291,6 +295,13 @@
 			<string>(?i:\b(interface)\s+([a-zA-Z_]\w*)\s*)</string>
 			<key>name</key>
 			<string>meta.interface.vbnet</string>
+		</dict>
+		<key>lambdaDefinition</key>
+		<dict>
+			<key>match</key>
+			<string>(?i:function|sub)</string>
+			<key>name</key>
+			<string>support.type.lambda.vbnet</string>
 		</dict>
 		<key>languageContants</key>
 		<dict>

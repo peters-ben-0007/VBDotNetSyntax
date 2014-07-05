@@ -22,6 +22,7 @@
 	{ "include": "#interfaceDefinition" },
   	{ "include": "#classDefinition" },
   	{ "include": "#functionDefinition" },
+  	{ "include": "#lambdaDefinition" },
   	{ "include": "#propertyDefinition" },
   	{ "include": "#propertyGetSet" },
 	{ "include": "#definitionEnd" },
@@ -181,6 +182,10 @@
 	   "match": "(?i:^\\s*(end)\\s+(function|sub|class|namespace|module|interface|property|addhandler|enum|event|operator|raiseevent|removehandler|select|structure|synclock))",
 	   "name": "keyword.control.end-definition.vbnet"
 	},
+	"lambdaDefinition":{
+		"match": "(?i:function|sub)",
+		"name": "support.type.lambda.vbnet"
+	},	
 	"inheritanceModifiers":{
 		"name": "storage.modifier.inheritance.vbnet",
 		"match": "(?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides|mustinherit|notinheritable)"
