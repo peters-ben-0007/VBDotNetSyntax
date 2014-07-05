@@ -48,6 +48,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#compilerDirectives</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#supportTypes</string>
 		</dict>
 		<dict>
@@ -147,7 +151,7 @@
 		<key>compilerDirectives</key>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:#if|#else|#elseif|#endif|#const|#externalsource|#end|#end externalsource)\s+</string>
+			<string>^\s*(?i:#if|#else|#elseif|#endif|#const|#externalsource|#end|#end externalsource)\s+</string>
 			<key>name</key>
 			<string>keyword.directive.vbnet</string>
 		</dict>

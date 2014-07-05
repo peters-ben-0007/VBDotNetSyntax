@@ -11,6 +11,7 @@
 	{ "include": "#characterOperator" },
 	{ "include": "#wordOperator" },
 	{ "include": "#languageContants" },
+	{ "include": "#compilerDirectives" },
   	{ "include": "#supportTypes" },
   	{ "include": "#suportFunctions" },
   	{ "include": "#linqKeywords" },
@@ -86,7 +87,7 @@
 	},
 	"compilerDirectives":{
 		"name": "keyword.directive.vbnet",
-		"match": "\\b(?i:#if|#else|#elseif|#endif|#const|#externalsource|#end|#end externalsource)\\s+"
+		"match": "^\\s*(?i:#if|#else|#elseif|#endif|#const|#externalsource|#end|#end externalsource)\\s+"
 	},
 	"supportTypes":{
 		"name": "support.type.vbnet",
