@@ -40,6 +40,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#lineContinuationOperator</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#wordOperator</string>
 		</dict>
 		<dict>
@@ -301,6 +305,13 @@
 			<string>\b((?i:Me|MyBase|MyClass))\.</string>
 			<key>name</key>
 			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>lineContinuationOperator</key>
+		<dict>
+			<key>match</key>
+			<string>\w*\b(\_)$</string>
+			<key>name</key>
+			<string>keyword.operator.vbnet</string>
 		</dict>
 		<key>linqKeywords</key>
 		<dict>
