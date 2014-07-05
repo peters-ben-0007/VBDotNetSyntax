@@ -116,7 +116,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#otherKeywords</string>
+			<string>#modifierKeywords</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -185,7 +185,7 @@
 		<key>controlKeywords</key>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent|Stop|On Error|Resume)\b)</string>
+			<string>(?i:\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent|Stop|On Error|Resume|Async|Await|Yield)\b)</string>
 			<key>name</key>
 			<string>keyword.control.vbnet</string>
 		</dict>
@@ -320,6 +320,13 @@
 			<key>name</key>
 			<string>keyword.control.linq.vbnet</string>
 		</dict>
+		<key>modifierKeywords</key>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of|alias|declare|widening|narrowing|ansi|assembly|auto|iterator|key|unicode)\s+</string>
+			<key>name</key>
+			<string>keyword.modifier.vbnet</string>
+		</dict>
 		<key>moduleDefinition</key>
 		<dict>
 			<key>captures</key>
@@ -366,13 +373,6 @@
 			<string>\b(-?\d+(\.?\d?)*)</string>
 			<key>name</key>
 			<string>constant.numeric.vbnet</string>
-		</dict>
-		<key>otherKeywords</key>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of|alias|declare|widening|narrowing)\s+</string>
-			<key>name</key>
-			<string>keyword.other.vbnet</string>
 		</dict>
 		<key>propertyDefinition</key>
 		<dict>
@@ -423,7 +423,7 @@
 		<key>propertyGetSet</key>
 		<dict>
 			<key>match</key>
-			<string>(?i:^\s*(protected friend|protected|friend|private)?\s+(get|set)\s*\(?)</string>
+			<string>(?i:^\s*(protected friend|protected|friend|private)?\s+(get|set)\s*\(?\b)</string>
 			<key>name</key>
 			<string>keyword.other.property.accessor.vbnet</string>
 		</dict>
