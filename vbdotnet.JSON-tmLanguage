@@ -1,6 +1,6 @@
 { "name": "VB.NET",
-  "scopeName": "source.vbnet", 
-  "fileTypes": ["vb"], 
+  "scopeName": "source.vbnet",
+  "fileTypes": ["vb"],
   "patterns": [
   	{ "include": "#singleLineComment" },
   	{ "include": "#region" },
@@ -148,7 +148,7 @@
 		    "3": { "name": "punctuation.definition.parameters.property.vbnet" }
 		},
 		"patterns": [
-			{ "include": "#otherKeywords" },
+			{ "include": "#modifierKeywords" },
 			{ "include": "#supportTypes" }
 		],
 		"end": "(\\))?\\s*",
@@ -170,7 +170,7 @@
 		    "4": { "name": "punctuation.definition.parameters.vbnet" }
 		},
 		"patterns": [
-			{ "include": "#otherKeywords" },
+			{ "include": "#modifierKeywords" },
 			{ "include": "#supportTypes" }
 		],
 		"end": "(\\))?\\s*",
@@ -185,7 +185,7 @@
 	"lambdaDefinition":{
 		"match": "(?i:function|sub)",
 		"name": "support.type.lambda.vbnet"
-	},	
+	},
 	"inheritanceModifiers":{
 		"name": "storage.modifier.inheritance.vbnet",
 		"match": "(?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides|mustinherit|notinheritable)"
