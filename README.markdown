@@ -4,8 +4,11 @@ Syntax definition for VB.Net.
 
 Defines most VB.Net keywords based on VB.Net 12 (.Net 4.5.1)
 
-Manually Installing
+Installation
 ===========
+**Use the Sublime Text Package Control plugin** - search for *VBDotNet*. If you don't have Package Control, you can get it here - [Package Control](https://sublime.wbond.net/). 
+
+### Manually Installing
 Copy the vbdontnet.tmlanguage file into you Sublime Text 2 packages directory.
 
 To ensure the file is not overrwritten/removed during upgrades, consider putting the file in the `../Packages/User/` directory.
@@ -20,7 +23,7 @@ Restart/Open Sublime Text - there should now be a "VB.NET" option under the "syn
 
 Consult the documentation to see where the packages directory is for you operating system:
 
-###  Sublime Text 2
+####  Sublime Text 2
 *http://sublimetext.info/docs/en/basic_concepts.html*
 
 * **Windows**: *[%APPDATA%]*\Sublime Text 2\Packages
@@ -31,7 +34,7 @@ Consult the documentation to see where the packages directory is for you operati
 
 * **Portable Installation**: [Sublime Text 2]/Data
 
-### Sublime Text 3
+#### Sublime Text 3
 http://docs.sublimetext.info/en/latest/basic_concepts.html#the-packages-directory
 
 * **Windows**: *[%APPDATA%]*\Sublime Text 3\Packages
