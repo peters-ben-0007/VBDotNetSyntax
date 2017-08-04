@@ -12,520 +12,433 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#singleLineComment</string>
+			<string>#comment-single-quote</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#region</string>
+			<string>#comment-rem</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#quotedString</string>
+			<string>#keyword-a</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#compilerOption</string>
+			<string>#keyword-b</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#importDefinition</string>
+			<string>#keyword-c</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#numericConstant</string>
+			<string>#keyword-d</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#characterOperator</string>
+			<string>#keyword-e</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#lineContinuationOperator</string>
+			<string>#keyword-f</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#wordOperator</string>
+			<string>#keyword-g</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#languageContants</string>
+			<string>#keyword-h</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#compilerDirectives</string>
+			<string>#keyword-i</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#supportTypes</string>
+			<string>#keyword-j</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#suportFunctions</string>
+			<string>#keyword-k</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#linqKeywords</string>
+			<string>#keyword-l</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#languageVariable</string>
+			<string>#keyword-m</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#namespaceDefinition</string>
+			<string>#keyword-n</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#moduleDefinition</string>
+			<string>#keyword-o</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#interfaceDefinition</string>
+			<string>#keyword-p</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#classDefinition</string>
+			<string>#keyword-r</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#functionDefinition</string>
+			<string>#keyword-s</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#lambdaDefinition</string>
+			<string>#keyword-t</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#propertyDefinition</string>
+			<string>#keyword-u</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#propertyGetSet</string>
+			<string>#keyword-v</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#definitionEnd</string>
+			<string>#keyword-w</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#storageModifiers</string>
+			<string>#keyword-x</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#inheritanceModifiers</string>
+			<string>#keyword-y</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#controlKeywords</string>
+			<string>#integer-literal</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#modifierKeywords</string>
+			<string>#floating-point-literal</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#vbFunctions</string>
+			<string>#character-literal</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#string-literal</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#date-literal</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#symbol</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#identifier</string>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>characterOperator</key>
+		<key>character-literal</key>
 		<dict>
+			<key>comment</key>
+			<string>char literals</string>
 			<key>match</key>
-			<string>(\.|\+=|\+|\*=|\*|\\=|\\|/=|/|=|-=|-|&lt;|&lt;=|&gt;|&gt;=|&amp;=|&amp;|\^|\^=|&gt;&gt;=|&gt;&gt;|&lt;&lt;=|&lt;&lt;|:=)</string>
-			<key>name</key>
-			<string>keyword.operator.vbnet</string>
-		</dict>
-		<key>classDefinition</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.class.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.class.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?i:\b(class)\s+([a-zA-Z_]\w*)\s*)</string>
-			<key>name</key>
-			<string>meta.class.vbnet</string>
-		</dict>
-		<key>compilerDirectives</key>
-		<dict>
-			<key>match</key>
-			<string>^\s*(?i:#if|#else|#elseif|#endif|#const|#externalsource|#end|#end externalsource)\s+</string>
-			<key>name</key>
-			<string>keyword.directive.vbnet</string>
-		</dict>
-		<key>compilerOption</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.compiler-option.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>support.constant.compiler-option.vbnet</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>constant.language.option-value.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?i:^\s*(option)\s*(strict|infer|explicit|compare)\s*(on|off|binary|text))</string>
-		</dict>
-		<key>controlKeywords</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:\b(If|Then|Else|ElseIf|Else If|End If|While|End While|For|End For|To|Each|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|End With|With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf|Step|GoTo|Try|Catch|Finally|End Try|Using|RaiseEvent|Stop|On Error|Resume|Async|Await|Yield)\b)</string>
-			<key>name</key>
-			<string>keyword.control.vbnet</string>
-		</dict>
-		<key>definitionEnd</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:^\s*(end)\s+(function|sub|class|namespace|module|interface|property|addhandler|enum|event|operator|raiseevent|removehandler|select|structure|synclock))</string>
-			<key>name</key>
-			<string>keyword.control.end-definition.vbnet</string>
-		</dict>
-		<key>functionDefinition</key>
-		<dict>
-			<key>begin</key>
-			<string>(?i:\b(function|sub)\s+([a-zA-Z_]\w*)\s*(\()?)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>support.type.function.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.vbnet</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>meta.parameters.vbnet</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.vbnet</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\))?\s*</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.vbnet</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.function.vbnet</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#modifierKeywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#supportTypes</string>
-				</dict>
-			</array>
-		</dict>
-		<key>importDefinition</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.other.namespace-alias.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?i:^\s*(imports)\s*([a-zA-Z_]\w*\s*=)?\s*([a-zA-Z_]\w*\.?)+)</string>
-		</dict>
-		<key>inheritanceModifiers</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:overloads|overrides|overridable|notoverridable|mustoverride|mustoverride overrides|notoverridable overrides|overloads overrides|mustinherit|notinheritable)</string>
-			<key>name</key>
-			<string>storage.modifier.inheritance.vbnet</string>
-		</dict>
-		<key>interfaceDefinition</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.interface.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.interface.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?i:\b(interface)\s+([a-zA-Z_]\w*)\s*)</string>
-			<key>name</key>
-			<string>meta.interface.vbnet</string>
-		</dict>
-		<key>lambdaDefinition</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:function|sub)</string>
-			<key>name</key>
-			<string>support.type.lambda.vbnet</string>
-		</dict>
-		<key>languageContants</key>
-		<dict>
-			<key>match</key>
-			<string>((?i:true|false|nothing))</string>
-			<key>name</key>
-			<string>constant.language.vbnet</string>
-		</dict>
-		<key>languageVariable</key>
-		<dict>
-			<key>match</key>
-			<string>\b((?i:Me|MyBase|MyClass))\.</string>
-			<key>name</key>
-			<string>keyword.other.vbnet</string>
-		</dict>
-		<key>lineContinuationOperator</key>
-		<dict>
-			<key>match</key>
-			<string>\w*\b(\_)$</string>
-			<key>name</key>
-			<string>keyword.operator.vbnet</string>
-		</dict>
-		<key>linqKeywords</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:\b(from|aggregate|select|where|order by|join|groupp by|into|group join|equals|let|distinct|skip|skip while|take|take while)\b)</string>
-			<key>name</key>
-			<string>keyword.control.linq.vbnet</string>
-		</dict>
-		<key>modifierKeywords</key>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:As|byval|byref|optional|handles|inherits|implements|withevents|end set|end get|of|alias|declare|widening|narrowing|ansi|assembly|auto|iterator|key|unicode)\s+</string>
-			<key>name</key>
-			<string>keyword.modifier.vbnet</string>
-		</dict>
-		<key>moduleDefinition</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.module.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.module.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?i:\b(module)\s+([a-zA-Z_]\w*)\s*)</string>
-			<key>name</key>
-			<string>meta.module.vbnet</string>
-		</dict>
-		<key>namespaceDefinition</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.namespace.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.namespace.vbnet</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b((?i:namespace))\s+([a-zA-Z_]\w*)\s*</string>
-			<key>name</key>
-			<string>meta.namespace.vbnet</string>
-		</dict>
-		<key>numericConstant</key>
-		<dict>
-			<key>match</key>
-			<string>\b(-?\d+(\.?\d?)*)</string>
-			<key>name</key>
-			<string>constant.numeric.vbnet</string>
-		</dict>
-		<key>propertyDefinition</key>
-		<dict>
-			<key>begin</key>
-			<string>(?i:\b(property)\s+([a-zA-Z_]\w*)\s*(\()?)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.property.vbnet</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.property.vbnet</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.property.vbnet</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\))?\s*</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.property.vbnet</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.property.vbnet</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#modifierKeywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#supportTypes</string>
-				</dict>
-			</array>
-		</dict>
-		<key>propertyGetSet</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:^\s*(protected friend|protected|friend|private)?\s+(get|set)\s*\(?\b)</string>
-			<key>name</key>
-			<string>keyword.other.property.accessor.vbnet</string>
-		</dict>
-		<key>quotedString</key>
-		<dict>
-			<key>match</key>
-			<string>(")([^"]|"")*(")</string>
+			<string>(?i:["\x{201C}\x{201D}]([^"\x{201C}\x{201D}]|["\x{201C}\x{201D}]{2})["\x{201C}\x{201D}]C)</string>
 			<key>name</key>
 			<string>string.quoted.double.vbnet</string>
 		</dict>
-		<key>region</key>
-		<dict>
-			<key>begin</key>
-			<string>^\s*((?i:#region))</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.directive.vbnet</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>^\s*((?i:#end region))</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.directive.vbnet</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.region.source.vbnet</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-			</array>
-		</dict>
-		<key>singleLineComment</key>
+		<key>comment-rem</key>
 		<dict>
 			<key>comment</key>
-			<string>single quote comment</string>
+			<string>comments REM</string>
 			<key>match</key>
-			<string>'.*$</string>
+			<string>(?i)(?&lt;=[^_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Mn}\p{Mc}\p{Cf}\p{Pc}])REM((?=[\r|\n])| [^\r\n]*)</string>
 			<key>name</key>
 			<string>comment.line.singlequote.vbnet</string>
 		</dict>
-		<key>storageModifiers</key>
+		<key>comment-single-quote</key>
 		<dict>
+			<key>comment</key>
+			<string>comments single-quote</string>
 			<key>match</key>
-			<string>\b(?i:dim|public|private|protected friend|protected|friend|shadows|static|shared|readonly|default|partial|readonly|writeonly|erase|redim|lib)\b</string>
+			<string>['\x{2018}\x{2019}][^\r\n]*</string>
 			<key>name</key>
-			<string>storage.modifier.access.vbnet</string>
+			<string>comment.line.singlequote.vbnet</string>
 		</dict>
-		<key>suportFunctions</key>
+		<key>date-literal</key>
 		<dict>
+			<key>comment</key>
+			<string>date literals</string>
 			<key>match</key>
-			<string>(?i:\b(new|addressof|addhandler|removehandler|throw|typeof|like|call|synclock)\b)</string>
+			<string>(#\s*(((((\d+/\d+/\d+)|(\d+-\d+-\d+))\s+(\d+:\d+(:\d+)?\s*(AM|PM)?)))|((\d+/\d+/\d+)|(\d+-\d+-\d+))|(\d+:\d+(:\d+)?\s*(AM|PM)?))\s*#)</string>
 			<key>name</key>
-			<string>support.function.vbnet</string>
+			<string>string.quoted.double.vbnet</string>
 		</dict>
-		<key>supportTypes</key>
+		<key>floating-point-literal</key>
 		<dict>
+			<key>comment</key>
+			<string>floating-point literals</string>
 			<key>match</key>
-			<string>(?i:\b(integer|decimal|double|single|date|long|short|char|string|byte|date|boolean|delegate|event|enum|sbyte|uinteger|ulong|ushort|const|object|global|paramarray)\b)</string>
+			<string>(?i:[0-9]*(\.[0-9]+)?((?&lt;=[0-9])E[+-]?[0-9]+)?(?&lt;=[0-9])[FRD@&amp;#]?)</string>
 			<key>name</key>
-			<string>support.type.vbnet</string>
+			<string>string.quoted.double.vbnet</string>
 		</dict>
-		<key>vbFunctions</key>
+		<key>identifier</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>support.function.vbnet</string>
-				</dict>
-			</dict>
+			<key>comment</key>
+			<string>identifiers</string>
 			<key>match</key>
-			<string>\b((?i:CBool|CByte|CChar|CDate|CDbl|CDec|Char|CInt|CLng|CObj|CSByte|CShort|CSng|CStr|CType|CUInt|CULng|CUShort|DirectCast|GetType|TryCast|GetXmlNamespace))\(</string>
-		</dict>
-		<key>wordOperator</key>
-		<dict>
-			<key>match</key>
-			<string>(?i:\b(mod|not|and|andalso|or|orelse|in|is|isnot|xor|out)\b)</string>
+			<string>(([\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}]|_[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Mn}\p{Mc}\p{Cf}\p{Pc}])[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Mn}\p{Mc}\p{Cf}\p{Pc}]*[%&amp;@!#$]?|\[([\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}]|_[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Mn}\p{Mc}\p{Cf}\p{Pc}])[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Mn}\p{Mc}\p{Cf}\p{Pc}]*\])</string>
 			<key>name</key>
-			<string>keyword.operator.vbnet</string>
+			<string>variable.other.namespace-alias.vbnet</string>
+		</dict>
+		<key>integer-literal</key>
+		<dict>
+			<key>comment</key>
+			<string>integer literals</string>
+			<key>match</key>
+			<string>(?i)(&amp;H[0-9A-F]+|&amp;O[0-7]+|&amp;B[0-1]+|[0-9]+)(S|I|L|US|UI|UL|%|!)?</string>
+			<key>name</key>
+			<string>string.quoted.double.vbnet</string>
+		</dict>
+		<key>keyword-a</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords A</string>
+			<key>match</key>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-b</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords B</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])((?&lt;=Compare)\s+Binary|Boolean|ByRef|Byte|ByVal)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-c</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords C</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Call|Case|Catch|CBool|CByte|CChar|CDate|CDbl|CDec|Char|CInt|Class|CLng|CObj|(?&lt;=Option\s)Compare|Const|Continue|CShort|CSng|CStr|CType|Custom(?=\s+Event))\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-d</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords D</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Date|Decimal|Declare|Default|Delegate|Descending|Dim|DirectCast|Distinct|Do|Double)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-e</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords E</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Each|Else|ElseIf|End|EndIf|Enum|Equals|Erase|Error|Event|Exit|(?&lt;=Option)\s+Explicit)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-f</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords F</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(False|Finally|For|Friend|From(?=\s+{)|From|Function)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-g</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords G</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Get|GetType|Global|GoSub|GoTo|Group\s+By|Group)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-h</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords H</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Handles)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-i</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords I</string>
+			<key>match</key>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-j</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords J</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Join)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-k</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords K</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Key)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-l</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords L</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Let|Lib|Like|Long|Loop)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-m</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords M</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Me|Mod|Module|MustInherit|MustOverride|MyBase|MyClass)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-n</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords N</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(NameOf|Namespace|Narrowing|New|Next|Not|Nothing|NotInheritable|NotOverridable)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-o</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Object|Of|(?&lt;=Explicit|Infer|Strict)\s+Off|On|Operator|Option|Optional|Or|Order\s+By|OrElse|Out|Overloads|Overridable|Overrides)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-p</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords P</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(ParamArray|Partial(?=\s+(Class|Structure|Module|Interface))|Partial(?=\s+(Class|Structure|Module|Interface|Sub|Public|Private|Protected|Friend|MustInherit|NotInheritable|NotOverrideable|Overridable|Shared))|Preserve|Private|Property|Protected|Public)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-r</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords R</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(RaiseEvent|ReadOnly|ReDim|(?&lt;=#|#End\s)Region|RemoveHandler|Resume|Return)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-s</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords S</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Select|Set|Shadows|Shared|Short|Single|Skip|Static|Step|Stop|(?&lt;=Option)\s+Strict|String|Structure|Sub|SyncLock)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-t</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords T</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Take|(?&lt;=Compare)\s+Text|Then|Throw|To|True|Try|TryCast|TypeOf)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-u</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords U</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Unicode|Until|Using)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-v</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords B</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Variant)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-w</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords W</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Wend|When|Where|While|Widening|With|WithEvents|WriteOnly)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-x</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords X</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Xor)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>keyword-y</key>
+		<dict>
+			<key>comment</key>
+			<string>keywords Y</string>
+			<key>match</key>
+			<string>(?i)(?&lt;![.!])(Yield)\b</string>
+			<key>name</key>
+			<string>keyword.other.vbnet</string>
+		</dict>
+		<key>string-literal</key>
+		<dict>
+			<key>comment</key>
+			<string>string literals</string>
+			<key>match</key>
+			<string>(["\x{201C}\x{201D}]([^"\x{201C}\x{201D}]|["\x{201C}\x{201D}]{2})*["\x{201C}\x{201D}])</string>
+			<key>name</key>
+			<string>string.quoted.double.vbnet</string>
+		</dict>
+		<key>symbol</key>
+		<dict>
+			<key>comment</key>
+			<string>symbols</string>
+			<key>match</key>
+			<string>(([&amp;*+\-/\\^&lt;=&gt;])|([(){}!#,.:]|((?&lt;= )_(?=\s$)))|\?)</string>
+			<key>name</key>
+			<string>variable.other.namespace-alias.vbnet</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
