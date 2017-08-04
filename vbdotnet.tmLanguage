@@ -213,6 +213,7 @@
 			<key>comment</key>
 			<string>keywords A</string>
 			<key>match</key>
+			<string>(?i)(?&lt;![.!])(AddHandler|AddressOf|Aggregate|Alias|And|AndAlso|Ansi|As|Ascending|Assembly|Async(?=\s+(Sub|Function))|Auto|Await)\b</string>
 			<key>name</key>
 			<string>keyword.other.vbnet</string>
 		</dict>
@@ -284,6 +285,7 @@
 			<key>comment</key>
 			<string>keywords I</string>
 			<key>match</key>
+			<string>(?i)(?&lt;![.!])(If|Implements|Imports|In|(?&lt;=Option)\s+Infer|Inherits|Integer|Interface|Into|Is|IsNot|Iterator(?=\s+(Function|Property)))\b</string>
 			<key>name</key>
 			<string>keyword.other.vbnet</string>
 		</dict>

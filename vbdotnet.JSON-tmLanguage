@@ -39,6 +39,7 @@
   "repository": {
     "keyword-a": {
         "name": "keyword.other.vbnet",
+        "match": "(?i)(?<![.!])(AddHandler|AddressOf|Aggregate|Alias|And|AndAlso|Ansi|As|Ascending|Assembly|Async(?=\\s+(Sub|Function))|Auto|Await)\\b",
         "comment": "keywords A"
     },
     "keyword-b": {
@@ -78,6 +79,7 @@
     },
     "keyword-i": {
         "name": "keyword.other.vbnet",
+        "match": "(?i)(?<![.!])(If|Implements|Imports|In|(?<=Option)\\s+Infer|Inherits|Integer|Interface|Into|Is|IsNot|Iterator(?=\\s+(Function|Property)))\\b",
         "comment": "keywords I"
     },
     "keyword-j": {
